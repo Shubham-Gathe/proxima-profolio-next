@@ -1,103 +1,286 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import { ShootingStars } from "./components/ui/shooting-stars";
+import { StarsBackground } from "./components/ui/stars-background";
+import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
+import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+import { WobbleCard } from "./components/ui/wobble-card";
+import { PinContainer } from "./components/3d-pin";
+import { LampContainer } from "./components/ui/lamp";
+import { motion } from "framer-motion";
+import { LampDemo } from "./components/ui/lamp";
+import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+import { LinkPreview } from "./components/ui/link-preview";
+import { SiFramer, SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
+import { FaArrowRight } from "react-icons/fa";
+import { ContactForm } from "./components/ContactForm";
+import FloatingModelBackground from "./components/FloatingModelBackground";
+import CustomCursor from "./components/CustomCursor"; // <-- import at the top
+import Header from "./components/Header";
+import { CardSpotlight } from "./components/ui/card-spotlight";
 
-export default function Home() {
+// Simple Step component for displaying steps
+const Step = ({ title }: { title: string }) => (
+  <li className="flex items-center gap-2 mb-2">
+    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full" />
+    <span>{title}</span>
+  </li>
+);
+
+export default function ShootingStarsAndStarsBackgroundDemo() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Header />
+      <CustomCursor />
+      <div className="pt-20" />
+      {/* Banner Section with subtle entrance animations */}
+      <div id="banner" className="h-[60rem] rounded-md flex flex-col items-center justify-center relative w-full">
+        <FloatingModelBackground />
+        <motion.h1
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative flex-col md:flex-row z-10 text-xl md:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white flex items-center gap-2 md:gap-8"
+          style={{ fontSize: "8rem", lineHeight: 1, fontWeight: 900 }}
+        >
+          Proxima Cloud
+        </motion.h1>
+        <motion.span
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="text-xl md:text-3xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium mt-4"
+        >
+          We Craft Digital Experiences That Matter
+        </motion.span>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="mt-2"
+        >
+          A passionate team of creators building unique, scalable, and meaningful web solutions — one pixel at a time.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
+          className="m-10 flex justify-center text-center button-wrapper"
+        >
+          <HoverBorderGradient
+            containerClassName="rounded-full"
+            as="button"
+            className="border-white/20 dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-6 py-3"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <span>Let's Build Together</span>
+            <FaArrowRight className="text-md ml-2" />
+          </HoverBorderGradient>
+        </motion.div>
+      </div>
+      {/* generative text */}
+      <section id="about" className="container mx-auto w-full mt-16 mt-0 mb-40">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mt-16 mb-10 text-white mb-20">
+          About Us
+        </h2>
+        <div className=" text-center rounded-md flex flex-row items-center justify-center relative w-full">
+          <div className="flex flex-col items-center justify-center w-1/2">
+            <div className=" flex justify-center items-center h-[20rem] flex-col px-4">
+              <p className="text-left text-neutral-500 dark:text-neutral-400 text-xl md:text-2xl mx-auto mb-10">
+                We’re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don’t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
+              </p>
+            </div>
+          </div>
+          <div className="w-1/2 flex items-center justify-center">
+            <CardSpotlight className="h-96 w-96">
+              <div className="text-neutral-200 mt-4 relative z-20 flex items-center justify-center h-full">
+               <h2>LOGO</h2>
+              </div>
+            </CardSpotlight>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* section three */}
+      <section id="what-we-bring" className="container mx-auto w-full mt-16 mt-10 mb-30">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mt-16 mb-10 text-white">
+          What We Bring to the Table
+        </h2>
+
+        <div className="container max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-4  mx-auto w-full">
+          <WobbleCard
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-transparent min-h-[500px] lg:min-h-[300px] bg-black"
+            className=""
+          >
+            <div className="max-w-xs">
+              <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Fresh Perspective
+              </h2>
+              <p className="mt-4 text-left  text-base/6 text-neutral-200">
+                We may be new, but that means no rigid habits. We bring bold ideas, creative energy, and a learner’s mindset to every project.
+              </p>
+            </div>
+            <img
+              src="/linear.webp"
+              width={500}
+              height={500}
+              alt="linear demo image"
+              className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black">
+            <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+              Full-Stack Capability
+            </h2>
+            <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
+              From pixel-perfect designs to robust backend systems, we offer end-to-end solutions that scale with your business.
+            </p>
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] bg-black">
+            <div className="max-w-sm">
+              <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Startup-Friendly Approach
+              </h2>
+              <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
+                We understand fast-moving environments. Expect agile execution, transparent communication, and outcomes you can count on.
+              </p>
+            </div>
+            <img
+              src="/linear.webp"
+              width={500}
+              height={500}
+              alt="linear demo image"
+              className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+        </div>
+      </section>
+      {/* section four  */}
+
+      {/* <section className="mx-auto w-full">
+      <LampDemo />
+      <ShootingStars />
+      <StarsBackground />
+      </section> */}
+      <section id="tech-stack" style={{ backgroundColor: "#0000" }} className="w-full flex items-center justify-center z-10 relative mb-30">
+        <BackgroundGradientAnimation>
+          <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-2xl text-center md:text-3xl lg:text-5xl">
+            <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
+              Building Tomorrow's Web, Today
+            </p>
+          </div>
+        </BackgroundGradientAnimation>
+      </section>
+
+      <section id="projects" className="projects-section container mx-auto w-full">
+        <h2 className="text-center mb-5 text-3xl md:text-4xl font-bold mt-16 mb-2 text-white">Our Recent Projects</h2>
+        <p className="text-center text-lg text-slate-400 mb-20">
+          Our work speaks louder than words. Here are a few of our recent builds and explorations.
+        </p>
+        <div className="w-full flex items-start justify-center h-[30rem] ">
+          <PinContainer
+            title="Podcast Pro site"
+            href="https://www.vwthemes.net/vw-podcast-pro/"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Podcast Theme
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  Audio podcast wordpress theme.
+                </span>
+              </div>
+              <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
+                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+              </div>
+            </div>
+          </PinContainer>
+          <PinContainer
+            title="Podcast Pro site"
+            href="https://www.vwthemes.net/vw-podcast-pro/"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Podcast Theme
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  Audio podcast wordpress theme.
+                </span>
+              </div>
+              <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
+                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+              </div>
+            </div>
+          </PinContainer>
+          <PinContainer
+            title="Podcast Pro site"
+            href="https://www.vwthemes.net/vw-podcast-pro/"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Podcast Theme
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  Audio podcast wordpress theme.
+                </span>
+              </div>
+              <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
+                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+      </section>
+
+      <section className="container mx-auto w-full my-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-white">
+          Our Tech Stack
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <LinkPreview url="https://nextjs.org/" className="flex flex-col items-center justify-center py-8 rounded-lg  hover:bg-neutral-800 transition">
+            <SiNextdotjs className="text-6xl mb-2" />
+          </LinkPreview>
+          <LinkPreview url="https://react.dev/" className="flex flex-col items-center justify-center py-8 rounded-lg hover:bg-neutral-800 transition">
+            <SiReact className="text-6xl text-cyan-400 mb-2" />
+          </LinkPreview>
+          <LinkPreview url="https://tailwindcss.com/" className="flex flex-col items-center justify-center py-8 rounded-lg hover:bg-neutral-800 transition">
+            <SiTailwindcss className="text-6xl text-sky-400 mb-2" />
+          </LinkPreview>
+          <LinkPreview url="https://typescriptlang.org/" className="flex flex-col items-center justify-center py-8 rounded-lg hover:bg-neutral-800 transition">
+            <SiTypescript className="text-6xl text-blue-500 mb-2" />
+          </LinkPreview>
+          <LinkPreview url="https://framer.com/motion/" className="flex flex-col items-center justify-center py-8 rounded-lg hover:bg-neutral-800 transition">
+            <SiFramer className="text-6xl text-white mb-2" />
+          </LinkPreview>
+          <LinkPreview url="https://vercel.com/" className="flex flex-col items-center justify-center py-8 rounded-lg hover:bg-neutral-800 transition">
+            <SiVercel className="text-6xl text-white mb-2" />
+          </LinkPreview>
+        </div>
+      </section>
+      <section id="contact" className="my-20 container mx-auto w-full">
+        <ContactForm />
+      </section>
+
+
+      <footer className="relative w-full mt-20 overflow-hidden bg-gradient-to-b from-transparent to-black/95">
+        {/* 3D Space Touch: Starfield and a stylized "horizon" */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          {/* Starfield effect */}
+          <StarsBackground className="!absolute !inset-0 !w-full !h-full z-0 pointer-events-none" />
+          {/* Horizon glow */}
+          <div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-10 w-[80vw] h-32 md:h-48 rounded-full bg-gradient-to-t from-blue-700/60 via-purple-700/40 to-transparent blur-2xl opacity-80" />
+        </div>
+        <div className="relative z-30 flex flex-col items-center justify-center py-20">
+          <span className="text-lg md:text-2xl font-semibold text-neutral-200 text-center select-none drop-shadow-lg">
+            © 2025 Proxima Cloud Solutions. Built with <span className="animate-pulse inline-block">❤️</span> and lots of coffee.
+          </span>
+        </div>
       </footer>
-    </div>
+      <ShootingStars />
+      <StarsBackground />
+    </>
+
   );
 }
