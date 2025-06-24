@@ -1,7 +1,7 @@
 "use client";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
-import React, { Suspense, useState, useRef } from "react";
+import React, { Suspense, useState, useRef, useEffect } from "react";
 
 // Model component to load and display the GLTF model
 function Model({ position, rotation }: { position: [number, number, number]; rotation: [number, number, number] }) {
@@ -31,9 +31,9 @@ function MovingModel() {
 
   useFrame(() => {
     setPosition(([x, y, z]) => {
-      let nx = x + velocity.current[0];
-      let ny = y + velocity.current[1];
-      let nz = z + velocity.current[2];
+      const nx = x + velocity.current[0];
+      const ny = y + velocity.current[1];
+      const nz = z + velocity.current[2];
 
       // Bounce off invisible space boundaries
       if (nx > 8 || nx < -8) velocity.current[0] *= -1;
@@ -75,3 +75,4 @@ export default function FloatingModelBackground() {
     </div>
   );
 }
+

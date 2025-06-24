@@ -3,12 +3,9 @@ import React from "react";
 import { ShootingStars } from "./components/ui/shooting-stars";
 import { StarsBackground } from "./components/ui/stars-background";
 import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
-import { TextGenerateEffect } from "./components/ui/text-generate-effect";
 import { WobbleCard } from "./components/ui/wobble-card";
 import { PinContainer } from "./components/3d-pin";
-import { LampContainer } from "./components/ui/lamp";
 import { motion } from "framer-motion";
-import { LampDemo } from "./components/ui/lamp";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 import { LinkPreview } from "./components/ui/link-preview";
 import { SiFramer, SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
@@ -18,14 +15,7 @@ import FloatingModelBackground from "./components/FloatingModelBackground";
 import CustomCursor from "./components/CustomCursor"; // <-- import at the top
 import Header from "./components/Header";
 import { CardSpotlight } from "./components/ui/card-spotlight";
-
-// Simple Step component for displaying steps
-const Step = ({ title }: { title: string }) => (
-  <li className="flex items-center gap-2 mb-2">
-    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full" />
-    <span>{title}</span>
-  </li>
-);
+import Image from "next/image";
 
 export default function ShootingStarsAndStarsBackgroundDemo() {
   return (
@@ -86,7 +76,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
           <div className="flex flex-col items-center justify-center w-1/2">
             <div className=" flex justify-center items-center h-[20rem] flex-col px-4">
               <p className="text-left text-neutral-500 dark:text-neutral-400 text-xl md:text-2xl mx-auto mb-10">
-                We’re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don’t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
+                We’re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don&apos;t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
               </p>
             </div>
           </div>
@@ -119,12 +109,13 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
                 We may be new, but that means no rigid habits. We bring bold ideas, creative energy, and a learner’s mindset to every project.
               </p>
             </div>
-            <img
+            <Image
               src="/linear.webp"
               width={500}
               height={500}
               alt="linear demo image"
               className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+              unoptimized
             />
           </WobbleCard>
           <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black">

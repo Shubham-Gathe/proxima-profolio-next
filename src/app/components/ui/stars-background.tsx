@@ -4,7 +4,6 @@ import React, {
   useState,
   useEffect,
   useRef,
-  RefObject,
   useCallback,
 } from "react";
 
@@ -86,8 +85,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     }
 
     return () => {
-      if (canvasRef.current) {
-        resizeObserver.unobserve(canvasRef.current);
+      // FIX: Copy ref to a variable so cleanup uses the same node
+      const canvas = canvasRef.current;
+      if (canvas) {
+        resizeObserver.unobserve(canvas);
       }
     };
   }, [
