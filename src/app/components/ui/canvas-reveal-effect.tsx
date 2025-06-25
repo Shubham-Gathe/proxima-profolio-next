@@ -209,7 +209,13 @@ const ShaderMaterial = ({
   });
 
   // Define a type for the uniform value
-  type UniformValue = number | number[] | number[][] | THREE.Vector2 | THREE.Vector3;
+  type UniformValue =
+    | number
+    | number[]
+    | number[][]
+    | THREE.Vector2
+    | THREE.Vector3
+    | THREE.Vector3[]; // <-- Add this
 
   // Use this type for preparedUniforms
   // Use useCallback so it can be a dependency
