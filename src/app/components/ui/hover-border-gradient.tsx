@@ -14,7 +14,7 @@ export function HoverBorderGradient({
   clockwise = true,
   ...props
 }: {
-  as?: keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<React.PropsWithChildren<any>>;
   containerClassName?: string;
   className?: string;
   duration?: number;
