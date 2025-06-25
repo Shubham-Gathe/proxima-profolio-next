@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const tailRefs = useRef<HTMLDivElement[]>([]);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
   const positions = useRef<{ x: number; y: number }[]>([]);
 
   // Track mouse position
@@ -85,7 +85,7 @@ export default function CustomCursor() {
         Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
-            ref={(el) => (tailRefs.current[i] = el!)}
+            ref={(el) => { tailRefs.current[i] = el!; }}
             style={{
               position: "fixed",
               left: 0,
