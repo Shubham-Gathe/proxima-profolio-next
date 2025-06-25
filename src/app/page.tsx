@@ -62,7 +62,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
             as="button"
             className="border-white/20 dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 px-6 py-3"
           >
-            <span>Let's Build Together</span>
+            <span>Let&apos;s Build Together</span>
             <FaArrowRight className="text-md ml-2" />
           </HoverBorderGradient>
         </motion.div>
@@ -135,7 +135,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
                 We understand fast-moving environments. Expect agile execution, transparent communication, and outcomes you can count on.
               </p>
             </div>
-            <img
+            <Image
               src="/linear.webp"
               width={500}
               height={500}
@@ -156,7 +156,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-2xl text-center md:text-3xl lg:text-5xl">
             <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
-              Building Tomorrow's Web, Today
+              Building Tomorrows Web, Today
             </p>
           </div>
         </BackgroundGradientAnimation>
@@ -182,7 +182,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
-                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+                <Image src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" width={400} height={400} className="" />
               </div>
             </div>
           </PinContainer>
@@ -200,7 +200,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
-                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+                <Image src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" width={400} height={400} className="" />
               </div>
             </div>
           </PinContainer>
@@ -218,7 +218,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" >
-                <img src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" className="" />
+                <Image src="/best-podcast-wordpress-theme.webp" alt="Podcast Pro Theme" width={400} height={400} className="" />
               </div>
             </div>
           </PinContainer>
