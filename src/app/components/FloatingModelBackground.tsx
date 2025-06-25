@@ -1,7 +1,7 @@
 "use client";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
-import React, { Suspense, useState, useRef} from "react";
+import React, { Suspense, useState, useRef } from "react";
 
 // Model component to load and display the GLTF model
 function Model({ position, rotation }: { position: [number, number, number]; rotation: [number, number, number] }) {
