@@ -76,7 +76,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
           <div className="flex flex-col items-center justify-center w-1/2">
             <div className=" flex justify-center items-center h-[20rem] flex-col px-4">
               <p className="text-left text-neutral-500 dark:text-neutral-400 text-xl md:text-2xl mx-auto mb-10">
-                We’re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don&apos;t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
+                We&apos;re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don&apos;t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
               </p>
             </div>
           </div>
