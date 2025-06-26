@@ -5,10 +5,8 @@ import { cn } from "../../lib/utils";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
-type ElementTag = keyof JSX.IntrinsicElements | React.ComponentType<React.HTMLAttributes<HTMLElement>>;
-
 interface HoverBorderGradientProps extends React.HTMLAttributes<HTMLElement> {
-  as?: ElementTag;
+  as?: React.ElementType;
   containerClassName?: string;
   className?: string;
   duration?: number;
@@ -55,7 +53,6 @@ export function HoverBorderGradient({
     }
   }, [hovered, duration, clockwise]);
 
-  // Create base props without mouse events
   const baseProps = {
     className: cn(
       "relative flex rounded-full border content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
@@ -64,7 +61,6 @@ export function HoverBorderGradient({
     ...props,
   };
 
-  // Only add mouse events if the Tag is an HTML element
   const finalProps = typeof Tag === 'string' 
     ? {
         ...baseProps,
