@@ -21,8 +21,9 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-transparent border-b border-white/0 py-3">
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6">
+    <header className="w-full fixed top-0 left-0 z-50[filter:url(#blurMe)_blur(40px)] z-60 shadow-lg">
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/30 via-white/10 to-transparent" />
+      <nav className="relative container mx-auto flex items-center justify-between py-4 px-6">
         <span className="font-bold text-white text-2xl tracking-tight">Proxima Cloud</span>
         <ul className="flex gap-6 text-white font-medium text-base">
           {navLinks.map((link) => (

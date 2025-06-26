@@ -20,7 +20,7 @@ import Image from "next/image";
 export default function ShootingStarsAndStarsBackgroundDemo() {
   return (
     <>
-    <div className="relative">
+    <div className="">
       <Header />
       <CustomCursor />
       <div className="pt-20" />
@@ -76,7 +76,7 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
           <div className="flex flex-col items-center justify-center w-1/2">
             <div className=" flex justify-center items-center h-[20rem] flex-col px-4">
               <p className="text-left text-neutral-500 dark:text-neutral-400 text-xl md:text-2xl mx-auto mb-10">
-                We&apos;re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don&apos;t just build websites — we build trust, ⚡ momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web 🌐.
+                We&apos;re a young and fearless web services crew on a mission to redefine how startups and small businesses experience the web. New in years but rich in curiosity , we fuel every project with creativity, fresh ideas, and commitment. With a blend of smart design, solid code, and attention to detail, we don&apos;t just build websites — we build trust, momentum, and experiences that stick. Every line of code is a step toward better performance, bolder vision, and a more human web.
               </p>
             </div>
           </div>
@@ -147,12 +147,6 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
         </div>
       </section>
       {/* section four  */}
-
-      {/* <section className="mx-auto w-full">
-      <LampDemo />
-      <ShootingStars />
-      <StarsBackground />
-      </section> */}
       <section id="tech-stack" style={{ backgroundColor: "#0000" }} className="w-full flex items-center justify-center z-10 relative mb-30">
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-2xl text-center md:text-3xl lg:text-5xl">
@@ -262,7 +256,6 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
           {/* Starfield effect */}
           <StarsBackground className="!absolute !inset-0 !w-full !h-full z-0 pointer-events-none" />
           {/* Horizon glow */}
-          <div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-10 w-[80vw] h-32 md:h-48 rounded-full bg-gradient-to-t from-blue-700/60 via-purple-700/40 to-transparent blur-2xl opacity-80" />
         </div>
         <div className="relative z-30 flex flex-col items-center justify-center py-20">
           <span className="text-lg md:text-2xl font-semibold text-neutral-200 text-center select-none drop-shadow-lg">
