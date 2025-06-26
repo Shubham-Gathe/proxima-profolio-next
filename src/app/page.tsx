@@ -20,12 +20,12 @@ import Image from "next/image";
 export default function ShootingStarsAndStarsBackgroundDemo() {
   return (
     <>
+    <div className="relative">
       <Header />
       <CustomCursor />
       <div className="pt-20" />
       {/* Banner Section with subtle entrance animations */}
-      <div id="banner" className="h-[60rem] rounded-md flex flex-col items-center justify-center relative w-full">
-        <FloatingModelBackground />
+      <div id="banner" className="h-[60rem] rounded-md flex flex-col items-center justify-center w-full">
         <motion.h1
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -88,8 +88,9 @@ export default function ShootingStarsAndStarsBackgroundDemo() {
             </CardSpotlight>
           </div>
         </div>
+      <FloatingModelBackground />
       </section>
-
+      </div>
       {/* section three */}
       <section id="what-we-bring" className="container mx-auto w-full mt-16 mt-10 mb-30">
         <h2 className="text-3xl md:text-4xl font-bold text-center mt-16 mb-10 text-white">

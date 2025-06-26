@@ -80,7 +80,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    let observedCanvas = canvasRef.current; // Copy ref to variable for cleanup
+    const observedCanvas = canvasRef.current; // Copy ref to variable for cleanup
     if (observedCanvas) {
       resizeObserver.observe(observedCanvas);
     }
